@@ -30,8 +30,8 @@ artifacts/
 This file is responsible for rendering your custom artifact. You might replace the inner UI with your own components, but the overall pattern (initialization, handling streamed data, and rendering content) remains the same. For instance:
 
 ```tsx
-import { Artifact } from "@/components/create-artifact";
-import { ExampleComponent } from "@/components/example-component";
+import { Artifact } from "@cc/components/create-artifact";
+import { ExampleComponent } from "@cc/components/example-component";
 import { toast } from "sonner";
 
 interface CustomArtifactMetadata {
@@ -147,9 +147,9 @@ The server file processes the document for the artifact. It streams updates (if 
 
 ```ts
 import { smoothStream, streamText } from "ai";
-import { myProvider } from "@/lib/ai/providers";
-import { createDocumentHandler } from "@/lib/artifacts/server";
-import { updateDocumentPrompt } from "@/lib/ai/prompts";
+import { myProvider } from "@cc/lib/ai/providers";
+import { createDocumentHandler } from "@cc/lib/artifacts/server";
+import { updateDocumentPrompt } from "@cc/lib/ai/prompts";
 
 export const customDocumentHandler = createDocumentHandler<"custom">({
   kind: "custom",
@@ -250,7 +250,7 @@ export const document = pgTable(
 And also add the client-side artifact to the `artifactDefinitions` array in the `components/artifact.tsx` file.
 
 ```ts
-import { customArtifact } from "@/artifacts/custom/client";
+import { customArtifact } from "@cc/artifacts/custom/client";
 
 export const artifactDefinitions = [..., customArtifact];
 ```
