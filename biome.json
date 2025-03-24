@@ -1,0 +1,15 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "extends": ["ultracite"],
+    "files": {
+    "ignore": [
+      "**/pnpm-lock.yaml",
+      "src/lib/db/migrations",
+      "src/lib/editor/react-renderer.tsx",
+      "node_modules",
+      ".next",
+      "public",
+      ".vercel"
+    ]
+  }
+}

@@ -1,3 +1,10 @@
+/* 
+You can find the provider library and model names in the 
+[provider](https://sdk.vercel.ai/providers/ai-sdk-providers)'s 
+documentation. Once you have updated the models, you should be 
+able to use the new models in your chatbot.
+*/
+
 import {
   customProvider,
   extractReasoningMiddleware,
@@ -5,24 +12,8 @@ import {
 } from 'ai';
 import { groq } from '@ai-sdk/groq';
 import { xai } from '@ai-sdk/xai';
-import { isTestEnvironment } from '../constants';
-import {
-  artifactModel,
-  chatModel,
-  reasoningModel,
-  titleModel,
-} from './models.test';
 
-export const myProvider = isTestEnvironment
-  ? customProvider({
-      languageModels: {
-        'chat-model': chatModel,
-        'chat-model-reasoning': reasoningModel,
-        'title-model': titleModel,
-        'artifact-model': artifactModel,
-      },
-    })
-  : customProvider({
+export const myProvider = customProvider({
       languageModels: {
         'chat-model': xai('grok-2-1212'),
         'chat-model-reasoning': wrapLanguageModel({

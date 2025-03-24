@@ -1,6 +1,11 @@
 {
-  "editor.formatOnSave": true,
   "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[jsonc]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
   "[typescript]": {
@@ -9,9 +14,15 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "emmet.showExpandedAbbreviation": "never",
+  "prettier.enable": false,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "eslint.workingDirectories": [
-    { "pattern": "app/*" },
-    { "pattern": "packages/*" }
-  ]
+  "tailwindCSS.experimental.configFile": "src/app/globals.css"
 }
